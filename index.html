@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Redes de computadoras</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Internet por dentro, a nivel universitario: *sockets*, Ethernet, IP, enrutamiento con Dijkstra, Bellman-Ford y BGP, TCP y el control de congestión, QUIC, DNS, NAT y redes definidas por software, con simuladores de paquetes y prácticas con herramientas públicas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="index">
+<header class="topbar"><a class="brand" href="index.html">Redes de <b>computadoras</b></a><span class="eyebrow">Curso visual e interactivo · Computación</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+
+<header class="hero">
+  <span class="eyebrow">Curso visual e interactivo · Computación</span>
+  <h1>Un chat que empieza con un *socket* y termina cifrado y sin servidor</h1>
+  <p class="lede">Cada vez que envías un mensaje, decenas de algoritmos deciden por dónde va, a qué ritmo sale y qué hacer si se pierde. Este curso los abre uno por uno: Dijkstra en cada router, AIMD en cada conexión TCP, una caché de DNS en cada consulta. En cada capítulo hay un simulador donde ves los paquetes moverse y una práctica para mirarlos en tu propia red.</p>
+</header>
+
+<section>
+  <h2>Cómo usar este curso</h2>
+  <div class="prose">
+    <p><b>Estado.</b> El curso está en preparación. La <a href="temario.html">tabla de contenido</a> ya tiene los 14 capítulos con sus secciones y sus laboratorios, y está en revisión.</p>
+    <p><b>Para quién es.</b> Para estudiantes de computación y desarrolladores que quieren entender la red con sus algoritmos y sus números. Conviene saber programar un poco (los ejemplos de código están en Python) y tener a mano Algoritmos (grafos y caminos mínimos). Si nunca has visto una red, empieza por la parte 1 de Cómo funciona un telco, que explica las mismas capas con analogías; aquí se dan por vistas.</p>
+    <p><b>Cómo está hecho.</b> Un chat recorre el curso. Nace como dos programas que se hablan por un *socket* en tu computador, cruza una red simulada de switches y routers, aprende a no saturarla, se muda a QUIC con cifrado y termina hablando de par a par detrás de un NAT. Los laboratorios son simuladores de paquetes, enlaces, colas y protocolos donde cambias un parámetro (la pérdida, el tamaño del búfer, el costo de un enlace) y ves la consecuencia. Las prácticas usan herramientas públicas y gratuitas de solo lectura (`ping`, `traceroute`, `dig`, Wireshark, `curl`) en Linux, macOS y Windows, y terminan en «Qué observar».</p>
+  </div>
+</section>
+
+<details class="stage" id="temario" open><summary><h2><span class="pn">Empieza aquí</span> Tabla de contenido</h2></summary>
+  <div class="mods">
+    <a class="mod" href="temario.html"><span class="n">≡</span><b>Tabla de contenido</b><p>Cada capítulo con sus secciones y sus laboratorios.</p></a>
+  </div>
+</details>
+
+<details class="stage" id="parte-1" open><summary><h2><span class="pn">Parte 1</span> Hablar por la red</h2><span class="cuenta" data-etapa-cuenta="1"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="un-chat-con-un-socket"><span class="n">01</span><b>Un chat con un *socket*: la red vista desde el programa</b><p>La API de *sockets*, el modelo cliente-servidor y la primera versión del chat que recorre el curso.</p></div>
+    <div class="mod soon" data-id="capas-y-medidas"><span class="n">02</span><b>Capas, el principio de extremo a extremo y los números de una red</b><p>Por qué Internet está hecha en capas y cómo se miden el retardo, el rendimiento y la pérdida.</p></div>
+  </div>
+</details>
+
+<details class="stage" id="parte-2" open><summary><h2><span class="pn">Parte 2</span> De un enlace a Internet</h2><span class="cuenta" data-etapa-cuenta="2"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="enlace-y-ethernet"><span class="n">03</span><b>La capa de enlace: tramas, acceso al medio y switches</b><p>Detectar errores, compartir un medio, aprender direcciones y evitar bucles en una red local.</p></div>
+    <div class="mod soon" data-id="ip-y-direccionamiento"><span class="n">04</span><b>IP: datagramas, direcciones y el prefijo más largo</b><p>La cabecera de IPv4 e IPv6, CIDR, la búsqueda del prefijo más largo, ICMP y la fragmentación.</p></div>
+    <div class="mod soon" data-id="enrutamiento-intradominio"><span class="n">05</span><b>Enrutamiento dentro de una red: estado de enlace y vector distancia</b><p>Dijkstra en OSPF, Bellman-Ford distribuido en RIP y lo que pasa cuando un enlace se cae.</p></div>
+    <div class="mod soon" data-id="bgp"><span class="n">06</span><b>BGP: el enrutamiento entre las redes que forman Internet</b><p>Sistemas autónomos, políticas de negocio, el vector de caminos y los incidentes que vienen de un anuncio equivocado.</p></div>
+  </div>
+</details>
+
+<details class="stage" id="parte-3" open><summary><h2><span class="pn">Parte 3</span> Transporte</h2><span class="cuenta" data-etapa-cuenta="3"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="transporte-confiable"><span class="n">07</span><b>Transporte confiable sobre una red que pierde</b><p>UDP, la suma de verificación y los protocolos de transferencia confiable, de parar y esperar a la repetición selectiva.</p></div>
+    <div class="mod soon" data-id="tcp"><span class="n">08</span><b>TCP: conexión, ventanas y temporizadores</b><p>El saludo de tres vías, la máquina de estados, el control de flujo y cómo TCP estima el tiempo de ida y vuelta.</p></div>
+    <div class="mod soon" data-id="control-de-congestion"><span class="n">09</span><b>Control de congestión: compartir una red sin colapsarla</b><p>AIMD y la demostración de Chiu y Jain, arranque lento, Reno, CUBIC y BBR.</p></div>
+    <div class="mod soon" data-id="quic-y-http-por-debajo"><span class="n">10</span><b>QUIC y HTTP por debajo: del bloqueo en la cabeza de la fila al transporte cifrado</b><p>Cómo HTTP/1.1, HTTP/2 y HTTP/3 usan el transporte, y por qué QUIC se construyó sobre UDP con el cifrado dentro.</p></div>
+  </div>
+</details>
+
+<details class="stage" id="parte-4" open><summary><h2><span class="pn">Parte 4</span> Los servicios y la red programable</h2><span class="cuenta" data-etapa-cuenta="4"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="dns-a-fondo"><span class="n">11</span><b>DNS a fondo: una base de datos distribuida y jerárquica</b><p>La jerarquía de zonas, la resolución iterativa, las cachés con TTL, el *anycast* y la seguridad del DNS.</p></div>
+    <div class="mod soon" data-id="nat-y-par-a-par"><span class="n">12</span><b>NAT y redes de par a par: hablar sin servidor en el medio</b><p>Cómo funciona un NAT, cómo se atraviesa con STUN, TURN e ICE, y cómo una DHT encuentra a los pares.</p></div>
+    <div class="mod soon" data-id="el-router-y-la-red-programable"><span class="n">13</span><b>El router por dentro y las redes definidas por software</b><p>Cómo un router reenvía millones de paquetes por segundo, y cómo SDN, OpenFlow y P4 convierten la red en un programa.</p></div>
+    <div class="mod soon" data-id="medir-la-red"><span class="n">14</span><b>Medir la red: ver lo que pasa en Internet</b><p>Cómo se mide el retardo, el ancho de banda y los caminos, desde tu computador y desde plataformas públicas, y el chat completo de punta a punta.</p></div>
+  </div>
+</details>
+
+
+
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/redes-de-computadoras" target="_blank" rel="noopener">github.com/aaramirez/redes-de-computadoras</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+</body>
+</html>
